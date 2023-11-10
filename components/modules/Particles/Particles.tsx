@@ -9,7 +9,7 @@ const ParticlesComponent = () => {
     <Particles
           id="tsparticles"
           init={particlesInit}
-          className="z-[9997] absolute top-0 w-full h-full"
+          className="z-[11] absolute top-0 w-full h-full"
           options={{
             "fullScreen": {
               "enable": false,

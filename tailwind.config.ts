@@ -23,6 +23,11 @@ const config: Config = {
         'lg-x2':{"min":"1201px"},
        
       },
+      fontFamily:{
+        "arturo" : 'Arturo', 
+        "quicksand" : 'Quicksand', 
+        "fonarto" : 'Fonarto' 
+      },
     },
   },
   plugins: [

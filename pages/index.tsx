@@ -1,9 +1,13 @@
- 
+import Main from "@/components/templates/index/Main"
+import Cities from "@/components/templates/index/Cities"
+
+
 const index = () => {
   return (
-    <div>
-      salam
-    </div>
+    <>
+      <Main />
+      <Cities />
+    </>
   )
 }
 

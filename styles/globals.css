@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: Arturo;
+    src: url('/fonts/Arturo-Italic Trial.ttf')
+  }
+
+  @font-face {
+    font-family: Fonarto;
+    src: url('/fonts/fonarto.regular.ttf')
+  }
+
+  @font-face {
+    font-family: Quicksand;
+    src: url('/fonts/Quicksand-Medium.ttf')
+  }
+
+
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,14 +38,27 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-.bg-overly{
+.bg-overly {
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.active {
+  color: #0984e3 !important;
+  padding-left: .5rem;
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  top: 51.5%;
+  transform: translatex(-222%);
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: #0984e3;
 }
