@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <main className='relative bg-no-repeat bg-cover bg-bottom h-[100vh] bg-[url(https://wallpapercave.com/dwp1x/wp4806722.jpg)]'>
+        <main className='relative bg-no-repeat bg-cover bg-bottom h-[100vh] bg-[url(https://wallpapercave.com/dwp1x/wp5307976.jpg)]'>
          <Navbar />
           <div className='bg-overly bg-[#0c0c0c] opacity-[.6] absolute left-0 top-0 w-full h-full'></div>
           <Component {...pageProps} />

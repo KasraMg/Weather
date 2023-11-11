@@ -62,3 +62,51 @@ body {
   border-radius: 50%;
   background-color: #0984e3;
 }
+@media (max-width:500px) {
+  .active::before { 
+    top: 65.5%;
+  }
+}
+
+
+ 
+ 
+/* article{
+ 
+}
+article.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 350px;
+  transform: translate(-50%, -50%) translateZ(0);
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+}
+article.card .thumb {
+  width: auto;
+  height: 260px; 
+}
+article.card .infos {
+  width: auto;
+  height: 350px;
+  position: relative;
+  padding: 14px 24px;
+  background: #fff;
+  transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+} */
+.city-card{
+  z-index: 9999;
+  overflow: hidden;
+  height: 168px;
+}
+ #kir{
+  height: 150px;
+  transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+ }
+.city-card:hover #kir {
+  transform: translateY(-30px);
+} 
