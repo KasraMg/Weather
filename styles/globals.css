@@ -83,3 +83,9 @@ body {
 .city-card:hover .city-card-img {
   transform: translateY(-80px);
 }
+.swiper-pagination-bullet{
+  background-color: white !important;
+}
+.swiper-pagination-bullet-active{
+  background: #0984e3 !important;
+}
