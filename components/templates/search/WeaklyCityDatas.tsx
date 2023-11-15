@@ -15,6 +15,7 @@ const WeaklyCityDatas = (props: any) => {
                 pagination={{
                     clickable: true,
                 }}
+                rewind={true}
                 breakpoints={{
                     320:{
                         slidesPerView: 1,

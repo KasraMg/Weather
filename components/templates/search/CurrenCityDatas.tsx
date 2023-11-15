@@ -3,15 +3,16 @@ import { FiWind } from 'react-icons/fi'
 import { CiTempHigh } from 'react-icons/ci'
 import { WiHumidity } from 'react-icons/wi'
 import { useState } from 'react'
-const CurrenCityData = (props: any) => {
+import { IoTodayOutline } from "react-icons/io5";
+const CurrenCityDatas = (props: any) => {
     console.log(props);
     const [tempType, setTempType] = useState("f")
 
     return (
-        <main className="z-30 relative pt-20 px-8 flex justify-evenly ">
+        <main className="z-30 relative pt-20 px-8 flex justify-evenly items-center">
             <div className="text-2xl space-y-2">
                 <div className="text-4xl mb-8 gap-2 relative right-2 flex items-center">
-                    <MdLocationOn />
+                    <MdLocationOn className='text-[#0984e3]' />
                     <p> {props.name}, {props.sys?.country}</p>
                 </div>
 
@@ -44,17 +45,21 @@ const CurrenCityData = (props: any) => {
 
             </div>
             <div>
+                    <div className='text-3xl relative left-8 mb-4 text-center flex justify-center gap-3 items-center'>
+                        <IoTodayOutline className="text-[#0984e3]"/>
+                        <p>Today</p>
+                        </div>
                 <div className='flex items-center gap-8 font-quicksand'>
-                    <img className="mx-auto" width="90" height="90" src="https://img.icons8.com/fluency/96/partly-cloudy-night.png" alt="cloudy-night" />
+                    <img className="mx-auto" width="90" height="90" src={`/images/icons/${props.weather[0].main}.png`} alt="cloudy-night" />
                     <div>
-                        <p className='text-9xl w-[186px]' style={{ letterSpacing: '0px' }}>{
+                        <p className='text-9xl w-[186px] whitespace-nowrap' style={{ letterSpacing: '0px' }}>{
                             tempType == "f" ? (
                                 <>
-                                    {String(props.main.temp).slice(0, 2)}°
+                                    {String(props.main.temp).slice(0, 2)} °
                                 </>
                             ) : (
                                 <>
-                                    {String((props.main.temp - 32) * 5 / 9).slice(0, 2)}°
+                                    {String((props.main.temp - 32) * 5 / 9).slice(0, 2)} °
                                 </>
                             )
                         }
@@ -73,4 +78,4 @@ const CurrenCityData = (props: any) => {
     )
 }
 
-export default CurrenCityData
+export default CurrenCityDatas

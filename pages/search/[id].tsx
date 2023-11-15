@@ -1,4 +1,4 @@
-import CurrenCityData from "@/components/templates/search/CurrenCityData";
+import CurrenCityDatas from "@/components/templates/search/CurrenCityDatas";
 import WeaklyCityDatas from "@/components/templates/search/WeaklyCityDatas";
 import { GetServerSidePropsContext } from "next";
 
@@ -9,7 +9,7 @@ const search = ({ currentWeatherData, WeeklyWeatherData }: any) => {
 
     return (
         <>
-            <CurrenCityData  {...currentWeatherData} />
+            <CurrenCityDatas  {...currentWeatherData} />
             <WeaklyCityDatas  {...WeeklyWeatherData} />
         </>
     )
