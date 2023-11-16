@@ -35,7 +35,7 @@ const WeaklyCityDatas = (props: any) => {
                     },
                 }}
                 modules={[Pagination]}
-                className="mySwiper w-[80%] h-full !pb-16"
+                className="mySwiper w-[80%] h-full !pb-16 sm-x2:!pb-28"
             >
                 {props.list.map((data: any) => ( 
                     <SwiperSlide className='flex justify-center'>
