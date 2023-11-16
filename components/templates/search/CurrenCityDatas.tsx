@@ -1,12 +1,26 @@
 import { MdLocationOn, MdVisibility } from 'react-icons/md'
-import { FiWind } from 'react-icons/fi'
+import { FiWind,FiSunrise,FiSunset  } from 'react-icons/fi'
 import { CiTempHigh } from 'react-icons/ci'
 import { WiHumidity } from 'react-icons/wi'
 import { useState } from 'react'
-import { IoTodayOutline } from "react-icons/io5";
+import { IoTodayOutline } from "react-icons/io5"; 
 const CurrenCityDatas = (props: any) => {
     console.log(props);
-    const [tempType, setTempType] = useState("f")
+    const [tempType, setTempType] = useState("f") 
+
+
+const calculateHour=(hour:number)=>{
+     let sunrise =hour;
+    let date = new Date(sunrise*1000);
+    let hours = date.getHours();
+    let minutes = "0" + date.getMinutes();
+    let seconds = "0" + date.getSeconds();
+    let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    return formattedTime
+}
+
+const sunrise= calculateHour(props.sys.sunrise)
+const sunset= calculateHour(props.sys.sunset) 
 
     return (
         <main className="z-30 relative pt-20 px-8 flex justify-evenly items-center">
@@ -25,21 +39,21 @@ const CurrenCityDatas = (props: any) => {
                         <MdVisibility />
                         <p className='mb-[3px]'>visibility : {props.visibility}</p>
                     </div>
-                    <div className='flex items-center gap-3  '>
+                    <div className='flex items-center gap-3 mt-2  '>
                         <CiTempHigh />
                         <p className='mb-[3px]'> feels like : {props.main?.feels_like}</p>
                     </div>
-                    <div className='flex items-center gap-3  ml-8' >
+                    <div className='flex items-center gap-3 mt-2  ml-8' >
                         <WiHumidity />
                         <p className='mb-[3px]'> humidity : {props.main.humidity}%</p>
                     </div>
-                    <div className='flex items-center gap-3 ' >
-                        <WiHumidity />
-                        <p className='mb-[3px]'> sunrise : {props.main.humidity}%</p>
+                    <div className='flex items-center gap-3 mt-2 ' >
+                        <FiSunrise />
+                        <p className='mb-[3px]'> sunrise : {sunrise}</p>
                     </div>
-                    <div className='flex items-center gap-3 ml-8' >
-                        <WiHumidity />
-                        <p className='mb-[3px]'> sunset : {props.main.humidity}%</p>
+                    <div className='flex items-center gap-3 mt-2 ml-8' >
+                        <FiSunset  />
+                        <p className='mb-[3px]'> sunset : {sunset}</p>
                     </div>
                 </section>
 
@@ -55,11 +69,11 @@ const CurrenCityDatas = (props: any) => {
                         <p className='text-9xl w-[186px] whitespace-nowrap' style={{ letterSpacing: '0px' }}>{
                             tempType == "f" ? (
                                 <>
-                                    {String(props.main.temp).slice(0, 2)} °
+                                    {String(props.main.temp).slice(0, 2)}°
                                 </>
                             ) : (
                                 <>
-                                    {String((props.main.temp - 32) * 5 / 9).slice(0, 2)} °
+                                    {String((props.main.temp - 32) * 5 / 9).slice(0, 2)}°
                                 </>
                             )
                         }
