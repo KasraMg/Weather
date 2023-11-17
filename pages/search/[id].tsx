@@ -1,12 +1,10 @@
 import CurrenCityDatas from "@/components/templates/search/CurrenCityDatas";
 import WeaklyCityDatas from "@/components/templates/search/WeaklyCityDatas";
 import { GetServerSidePropsContext } from "next";
+import { City,WeeklyCityData } from "@/Types/city.types";
 
-
-const search = ({ currentWeatherData, WeeklyWeatherData }: any) => {
-    console.log(currentWeatherData);
-    console.log(WeeklyWeatherData);
-
+const search = ({ currentWeatherData, WeeklyWeatherData }:{currentWeatherData:City,WeeklyWeatherData:WeeklyCityData} ) => {
+    
     return (
         <>
             <CurrenCityDatas  {...currentWeatherData} />

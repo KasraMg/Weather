@@ -4,8 +4,8 @@ import { CiTempHigh } from 'react-icons/ci'
 import { WiHumidity } from 'react-icons/wi'
 import { useState } from 'react'
 import { IoTodayOutline } from "react-icons/io5";
-const CurrenCityDatas = (props: any) => {
-    console.log(props);
+import { City } from '@/Types/city.types'
+const CurrenCityDatas = (props: City) => {
     const [tempType, setTempType] = useState("c")
 
 
@@ -18,7 +18,6 @@ const CurrenCityDatas = (props: any) => {
         let formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
         return formattedTime
     }
-
     const sunrise = calculateHour(props.sys.sunrise)
     const sunset = calculateHour(props.sys.sunset)
 

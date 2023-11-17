@@ -1,8 +1,9 @@
 import Main from "@/components/templates/index/Main"
-import Cities from "@/components/templates/index/Cities"
+import Cities from "@/components/templates/index/Cities" 
+import { City, Cities as CitiesType } from "@/Types/city.types";
 
-
-const index = (citiesData:any) => { 
+const index = (citiesData:CitiesType) => { 
+  console.log(citiesData);
   
   return (
     <>
@@ -12,9 +13,8 @@ const index = (citiesData:any) => {
   )
 }
 export async function getServerSideProps() { 
-  const cities = ['tehran', 'moskva', 'texas', 'Berlin', 'london'] 
-  let allData:any = [];
-
+  const cities:string[] = ['tehran', 'moskva', 'texas', 'Berlin', 'london'] 
+  let allData:CitiesType[] = []; 
   const getCityData = async (city:string) => {  
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0dd4f5dae38f8099b780f8bb28de2d39`); 
     const data = await response.json(); 
@@ -22,7 +22,7 @@ export async function getServerSideProps() {
   } 
 
   try {
-    const results = await Promise.all(cities.map(city => getCityData(city)));
+    const results = await Promise.all(cities.map((city:string) => getCityData(city)));
     results.map(result => {
       allData.push(result);
     });

@@ -4,8 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import { List, WeeklyCityData } from "@/Types/city.types";
 import Card from '@/components/modules/card/Card';
-const WeaklyCityDatas = (props: any) => {
+const WeaklyCityDatas = (props: WeeklyCityData) => {
+console.log(props);
 
     return (
         <div className='flex relative z-30 mt-28'>
@@ -17,7 +19,7 @@ const WeaklyCityDatas = (props: any) => {
                 }}
                 rewind={true}
                 breakpoints={{
-                    320:{
+                    320: {
                         slidesPerView: 1,
                         spaceBetween: 20,
                     },
@@ -37,9 +39,9 @@ const WeaklyCityDatas = (props: any) => {
                 modules={[Pagination]}
                 className="mySwiper w-[80%] h-full !pb-16 sm-x2:!pb-28"
             >
-                {props.list.map((data: any) => ( 
+                {props.list.map((data: List) => (
                     <SwiperSlide className='flex justify-center'>
-                     <Card city={props.city.name} weatherData={...data}/>
+                        <Card city={props.city.name} weatherData={data} />
                     </SwiperSlide>
                 ))}
 
