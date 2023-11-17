@@ -1,8 +1,6 @@
 import Card from "@/components/modules/card/Card";
 
-const Cities = (props: any) => {
-    console.log(props);
-
+const Cities = (props: any) => { 
     return (
         <main>
             <div className="flex justify-center md:flex-wrap sm-x3:gap-10 gap-10 w-[80%] mx-auto md:w-full mt-20">
