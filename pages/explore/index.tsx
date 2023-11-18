@@ -9,13 +9,13 @@ const index = (props: Cities) => {
 
   return (
     <>
-      <main className="grid-cols-[auto,auto] grid gap-20 mt-24 justify-center h-[360px]">
+      <main className="grid-cols-[auto,auto] md:h-full  md:grid-cols-[auto] md:justify-normal md:px-8 md:gap-10 grid gap-20 mt-24 justify-center h-[360px]">
         {props.citiesData.slice(startIndex, endIndex).map((city: City) => (
           <Card {...city} />
         ))}
       </main>
 
-      <ul className="flex justify-center relative z-30 mt-32 gap-4">
+      <ul className="flex justify-center relative z-30 mt-32 gap-4 md:pb-10 md:mt-24">
         {Array.from({ length: Math.ceil(props.citiesData.length / 4) }).map((item, index) => (
           <li key={index + 1} onClick={() => setPage(index + 1)} className={`${page == index + 1 && "!bg-[#0984e3] text-white"} py-2 px-4 rounded-full bg-white text-black cursor-pointer`}>{index + 1}</li>
         ))}
