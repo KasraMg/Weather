@@ -3,8 +3,7 @@ import Cities from "@/components/templates/index/Cities"
 import { City, Cities as CitiesType } from "@/Types/city.types";
 
 const index = (citiesData:CitiesType) => { 
-  console.log(citiesData);
-  
+ 
   return (
     <>
       <Main />

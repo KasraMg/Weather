@@ -9,6 +9,7 @@ const search = ({ currentWeatherData, WeeklyWeatherData }:{currentWeatherData:Ci
         <>
             <CurrenCityDatas  {...currentWeatherData} />
             <WeaklyCityDatas  {...WeeklyWeatherData} />
+            
         </>
     )
 }

@@ -11,7 +11,7 @@ const index = (props: Cities) => {
     <>
       <main className="grid-cols-[auto,auto] md:h-full  md:grid-cols-[auto] md:justify-normal md:px-8 md:gap-10 grid gap-20 mt-24 justify-center h-[360px]">
         {props.citiesData.slice(startIndex, endIndex).map((city: City) => (
-          <Card {...city} />
+          <Card key={city.id} {...city} />
         ))}
       </main>
 

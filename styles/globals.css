@@ -89,3 +89,9 @@ body {
 .swiper-pagination-bullet-active{
   background: #0984e3 !important;
 }
+
+form input:focus,
+form textarea:focus{
+  box-shadow: none !important;
+  border-color: white !important;
+}

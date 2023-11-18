@@ -1,8 +1,7 @@
 import { City, List } from "@/Types/city.types";
 
-const Card = ({ weatherData, city }: {weatherData:List,city:string}) => {
-  const temp = String((weatherData.main.temp - 32) * 5 / 9).slice(0, 3)
-console.log(weatherData);
+const Card = ({ weatherData, city }: {weatherData:City | List,city:string | null}) => {
+  const temp = String((weatherData.main.temp - 32) * 5 / 9).slice(0, 3) 
 
   const calculateHour = (hour: number) => {
     let sunrise = hour;

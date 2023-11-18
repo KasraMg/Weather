@@ -7,8 +7,7 @@ import { Pagination } from 'swiper/modules';
 import { List, WeeklyCityData } from "@/Types/city.types";
 import Card from '@/components/modules/card/Card';
 const WeaklyCityDatas = (props: WeeklyCityData) => {
-console.log(props);
-
+ 
     return (
         <div className='flex relative z-30 mt-28'>
             <Swiper
@@ -40,7 +39,7 @@ console.log(props);
                 className="mySwiper w-[80%] h-full !pb-16 sm-x2:!pb-28"
             >
                 {props.list.map((data: List) => (
-                    <SwiperSlide className='flex justify-center'>
+                    <SwiperSlide key={data.dt} className='flex justify-center'>
                         <Card city={props.city.name} weatherData={data} />
                     </SwiperSlide>
                 ))}

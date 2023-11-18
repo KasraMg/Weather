@@ -6,17 +6,13 @@ const Main = () => {
     const [searchInput, setSearchInput] = useState<string>()
 
     const searchHandler = (event: React.KeyboardEvent) => {
-        if (event.keyCode==13) {
-            
-        route.push(`/search/${searchInput}`)
-        console.log(searchInput);
-        
+        if (event.keyCode==13) { 
+        route.push(`/search/${searchInput}`)  
         }
     }
  
     const searchIconHandler = () => {
-        route.push(`/search/${searchInput}`)
-        console.log(searchInput);
+        route.push(`/search/${searchInput}`) 
     }
     return (
         <div className="flex justify-center text-center relative z-30 flex-col pt-28">
