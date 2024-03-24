@@ -1,15 +1,19 @@
 import CurrenCityDatas from "@/components/templates/search/CurrenCityDatas";
 import WeaklyCityDatas from "@/components/templates/search/WeaklyCityDatas";
 import { GetServerSidePropsContext } from "next";
-import { City,WeeklyCityData } from "@/Types/city.types";
+import { City, WeeklyCityData } from "@/Types/city.types";
+import Head from "next/head";
 
-const search = ({ currentWeatherData, WeeklyWeatherData }:{currentWeatherData:City,WeeklyWeatherData:WeeklyCityData} ) => {
-    
+const search = ({ currentWeatherData, WeeklyWeatherData,title }: { currentWeatherData: City, WeeklyWeatherData: WeeklyCityData,title:string }) => {
+
     return (
         <>
+            <Head>
+                <title>{title}</title> 
+            </Head>
             <CurrenCityDatas  {...currentWeatherData} />
             <WeaklyCityDatas  {...WeeklyWeatherData} />
-            
+
         </>
     )
 }
@@ -33,6 +37,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const resWeeklyData = await Weekly_data.json();
     return {
         props: {
+            title:params?.id,
             currentWeatherData: resCurrentData,
             WeeklyWeatherData: resWeeklyData
         },

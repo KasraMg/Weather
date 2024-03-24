@@ -10,10 +10,10 @@ const Navbar = () => {
                 <Link href={'/support'} className={`${path.pathname == "/support" && "active"} hover:text-[#0984e3] cursor-pointer transition-colors`}>Support</Link>
             </ul>
             <div className="flex items-center sm-x2:hidden z-30 gap-2">
-                <div className="flex flex-col font-arturo">
+            <Link href={'/'} className="flex flex-col font-arturo">
                     <span>Storm</span>
                     <span>Seeker</span>
-                </div>
+                </Link> 
                 <img width={70} src="/images/icons8-night-100.png" alt="" />
             </div>
         </nav>

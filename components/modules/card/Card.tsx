@@ -16,7 +16,7 @@ const Card = ({ weatherData, city }: {weatherData:City | List,city:string | null
   const sunrise = calculateHour(weatherData.sys?.sunrise)
   const sunset = calculateHour(weatherData.sys?.sunset)
   return (
-    <section className={`${weatherData.sys.sunset && "city-card"} mx-auto border-b border-[#0984e3] border-solid z-50 text-center p-3 relative w-[120px] rounded overflow-hidden`} style={{ boxShadow: ' 0px 19px 70px 11px rgba(0,0,0,0.5)' }}>
+    <section className={`${weatherData.sys.sunset && "city-card"} mx-auto border-b border-[#0984e3] border-solid z-50 text-center p-3 relative w-[120px] rounded overflow-hidden`} style={{  boxShadow: 'rgb(0 0 0 / 14%) 0px 19px 70px 11px' }}>
       <div className="h-[64px] city-card-img" style={{ transition: "0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03)" }}>
         <img className="mx-auto" width="64" height="64" src={`/images/icons/${weatherData.weather[0].main}.png`} />
       </div>

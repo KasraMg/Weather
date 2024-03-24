@@ -18,7 +18,7 @@ const contactUsSchema = Yup.object().shape({
     text: Yup.string() 
     .min(3, "Text must have 3 characters")
     .max(100, "Text must have a maximum of 100 characters")
-    .required("Text the Password")
+    .required("Enter the Text")
     
 });
 
