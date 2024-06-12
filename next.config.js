@@ -1,12 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const nextConfig = {};
 
-module.exports={
-  server:{
-    port:3005,
-  }
-}
-
-module.exports = nextConfig
+module.exports = nextConfig;
