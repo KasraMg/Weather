@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.45.0",
+    "@tanstack/react-query": "^5.39.0",
+    "@tanstack/react-query-devtools": "^5.40.1",
     "eslint-config-next": "^14.2.4",
     "flowbite": "^2.0.0",
     "flowbite-react": "^0.6.4",
@@ -25,6 +26,7 @@
     "yup": "^1.1.1"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.35.6",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
