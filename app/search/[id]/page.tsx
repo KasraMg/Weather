@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import { cityWeeklyDatas, fetchCity } from "@/utils/fetchs";
 import Loader from "@/components/modules/Loader/Loader";
 
-const search = () => {
+const Search = () => {
   const params = useParams();
   const { data } = useGetData<any>(["city", params.id], () =>
     fetchCity(params.id as string)
@@ -47,4 +47,4 @@ const search = () => {
   );
 };
 
-export default search;
+export default Search;
