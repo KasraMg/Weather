@@ -1,6 +1,11 @@
 import Form from "@/components/templates/support/Form";
 import { FaPhoneAlt, FaTelegramPlane } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Support",
+};
 
 const Support = () => { 
   return (

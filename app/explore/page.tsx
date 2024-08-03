@@ -1,18 +1,18 @@
 import Cities from "@/components/templates/explore/Cities";
 import Hydrated from "@/providers/Hydrated";
-import { fetchExplorCityData } from "@/utils/fetchs";
-import Head from "next/head";
+import { fetchExplorCityData } from "@/utils/fetchs";  
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Explore",
+  description: "explore cities weather",
+};
+
 const Explore = () => {
   return (
-    <>
-      <Head>
-        <title>Explore</title>
-        <meta name="description" content="explore cities weather" />
-      </Head>
-      <Hydrated queryKey={["exploreCities"]} queryFn={fetchExplorCityData}>
-        <Cities />
-      </Hydrated>
-    </>
+    <Hydrated queryKey={["exploreCities"]} queryFn={fetchExplorCityData}>
+      <Cities />
+    </Hydrated>
   );
 };
 

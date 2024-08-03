@@ -20,7 +20,7 @@ const Cities = () => {
       </main>
 
       <ul className="flex justify-center relative z-30 mt-32 gap-4 md:pb-10 md:mt-24">
-        {Array.from({ length: Math.ceil(data.length / 4) }).map(
+        {Array.from({ length: Math.ceil(data?.length / 4) }).map(
           (item, index) => (
             <li
               key={index + 1}

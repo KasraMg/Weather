@@ -5,24 +5,23 @@ import Head from "next/head";
 import useGetData from "@/hooks/useGetData";
 import { useParams } from "next/navigation";
 import { cityWeeklyDatas, fetchCity } from "@/utils/fetchs";
-import Loader from "@/components/modules/Loader/Loader";
+import Loader from "@/components/modules/loader/Loader";
 
 const Search = () => {
   const params = useParams();
   const { data } = useGetData<any>(["city", params.id], () =>
     fetchCity(params.id as string)
   );
-  const { data: weeklyData,isPending } = useGetData<any>(["cityWeekly", params.id], () =>
-    cityWeeklyDatas(data.coord.lat, data.coord.lon)
-  );
-
-  console.log(data);
-  console.log(weeklyData);
+  const { data: weeklyData, isPending } = useGetData<any>(
+    ["cityWeekly", params.id],
+    () => cityWeeklyDatas(data.coord.lat, data.coord.lon)
+  ); 
+  document.title = data && data.name ? data.name : data && data.cod == 404 && "404"
 
   return (
     <>
       <Head>
-        <title>{params.id}</title>
+        <title>Support</title>
       </Head>
       {data && data.name && weeklyData ? (
         <CurrenCityDatas {...data} />
