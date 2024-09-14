@@ -1,5 +1,5 @@
 export const fetchPopularCityData = async () => {
-  const cities = ["tehran", "Barcelona", "texas", "paris", "london"];
+  const cities = ["tehran", "moscow", "texas", "paris", "london"];
   const fetchPromises = cities.map(async (city) => {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1715b547a2a9e93692e0880db9e32355`,
@@ -15,17 +15,17 @@ export const fetchPopularCityData = async () => {
 export const fetchExplorCityData = async () => {
   const cities = [
     "tehran",
-    "moskva",
+    "moscow",
     "texas",
-    "Berlin",
+    "berlin",
     "london",
     "los angeles",
     "tokyo",
-    "Buenos Aires",
+    "buenos Aires",
     "toronto",
-    "Riyadh",
+    "riyadh",
     " Cairo",
-    "Barcelona",
+    "barcelona",
     "paris",
     "rome",
   ];

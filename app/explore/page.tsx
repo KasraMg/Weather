@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 };
 
 const Explore = () => {
-  return (
-    <Hydrated queryKey={["exploreCities"]} queryFn={fetchExplorCityData}>
-      <Cities />
-    </Hydrated>
-  );
+  return <Cities />  
 };
 
 export default Explore;

@@ -5,7 +5,7 @@ import { fetchPopularCityData } from "@/utils/fetchs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "City Weather",
+  title: "Storm Seeker",
 };
 
 const IndexPage = () => {

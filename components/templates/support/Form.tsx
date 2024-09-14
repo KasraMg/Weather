@@ -21,7 +21,7 @@ const Form = () => {
   return (
     <form
       onClick={formHandler.handleSubmit}
-      className="grid py-4 px-8 rounded-lg bg-[#ffffff0a] w-96"
+      className="grid py-4 px-8 rounded-lg bg-[#ffffff0a] sm:!w-full w-96"
       action=""
     >
       <p className="text-3xl text-center pt-2 mb-5">Get in touch</p>

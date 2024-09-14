@@ -1,22 +1,21 @@
-"use client"
-import {  Cities as CitiesType , City } from "@/Types/city.types";
+"use client";
+import { Cities as CitiesType, City } from "@/Types/city.types";
 import Card from "@/components/modules/card/Card";
-import useGetData from "@/hooks/useGetData"; 
+import Loader from "@/components/modules/loader/Loader";
+import useGetData from "@/hooks/useGetData";
 import { fetchPopularCityData } from "@/utils/fetchs";
-const Cities = () => { 
-  const { data } = useGetData<any>(["cities"], fetchPopularCityData);
-    console.log(data);
-    
-    return (
-        <main>
-            <div className="flex justify-center md:flex-wrap sm-x3:gap-10 gap-10 w-[80%] mx-auto md:w-full mt-20">
-                {data?.map((city: City) => (
-                    <Card weatherData={city} key={city.id} city={null} />
-                ))} 
+const Cities = () => {
+  const { data, isPending } = useGetData<any>(["cities"], fetchPopularCityData);
+  return (
+    <main>
+      <div className="flex justify-center md:flex-wrap sm-x3:gap-10 gap-10 w-[80%] mx-auto md:w-full mt-20">
+        {data?.map((city: City) => (
+          <Card weatherData={city} key={city.id} city={null} />
+        ))}
+      </div>
+      {isPending && <Loader />}
+    </main>
+  );
+};
 
-            </div>
-        </main>
-    )
-}
-
-export default Cities 
+export default Cities;

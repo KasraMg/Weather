@@ -15,8 +15,8 @@ const Search = () => {
   const { data: weeklyData, isPending } = useGetData<any>(
     ["cityWeekly", params.id],
     () => cityWeeklyDatas(data.coord.lat, data.coord.lon)
-  ); 
-  document.title = data && data.name ? data.name : data && data.cod == 404 && "404"
+  );
+  document.title = params.id as string;
 
   return (
     <>

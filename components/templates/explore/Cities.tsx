@@ -4,12 +4,13 @@ import Card from "@/components/templates/explore/Card";
 import { useState } from "react";
 import useGetData from "@/hooks/useGetData";
 import { fetchExplorCityData } from "@/utils/fetchs";
+import Loader from "@/components/modules/loader/Loader";
 const Cities = () => {
   const [page, setPage] = useState<number>(1);
   const endIndex = 4 * page;
   const startIndex = endIndex - 4;
 
-  const { data } = useGetData<any>(["exploreCities"], fetchExplorCityData);
+  const { data,isPending } = useGetData<any>(["exploreCities"], fetchExplorCityData);
 
   return (
     <div>
@@ -34,6 +35,7 @@ const Cities = () => {
           )
         )}
       </ul>
+      {isPending && <Loader/>}
     </div>
   );
 };

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Support = () => { 
   return (
-    <div className="p-8 mt-10 flex justify-center items-baseline gap-40 relative z-30"> 
+    <div className="p-8 mt-10 sm:!flex-col flex justify-center items-baseline gap-40 relative z-30"> 
       <section>
         <p className="text-3xl">Contact us</p> 
         <p className="my-2">If you have any criticism or comment, let us know</p>
