@@ -1,5 +1,5 @@
 export const fetchPopularCityData = async () => {
-  const cities = ["tehran", "moskva", "texas", "Berlin", "london"];
+  const cities = ["tehran", "Barcelona", "texas", "paris", "london"];
   const fetchPromises = cities.map(async (city) => {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1715b547a2a9e93692e0880db9e32355`,
@@ -49,7 +49,7 @@ export const fetchCity = async (title: string) => {
   return res;
 };
 
-export const cityWeeklyDatas = async (lat: string,lon:string) => {
+export const cityWeeklyDatas = async (lat: string, lon: string) => {
   const city = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0dd4f5dae38f8099b780f8bb28de2d39`
   );
