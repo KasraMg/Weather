@@ -5,6 +5,6 @@
 
 <div align="center">
 
-[View Online](https://myweater.iran.liara.run/)
+[View Online](https://new-weather-app.liara.run/)
 
  </div>
