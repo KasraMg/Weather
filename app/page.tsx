@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Storm Seeker",
 };
 
-const IndexPage = () => {
+const Index = () => {
   return (
     <>
       <Main />
@@ -19,4 +19,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default Index;

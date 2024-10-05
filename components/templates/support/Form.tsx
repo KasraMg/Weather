@@ -7,8 +7,7 @@ import swal from "sweetalert";
 const Form = () => {
   const formHandler = useFormik({
     initialValues: { name: "", email: "", text: "" },
-    onSubmit: (values, { setSubmitting, resetForm }) => {
-      console.log(values);
+    onSubmit: () => { 
       swal({
         title: "Your message has been sent successfully",
         icon: "success",
@@ -21,7 +20,7 @@ const Form = () => {
   return (
     <form
       onClick={formHandler.handleSubmit}
-      className="grid py-4 px-8 rounded-lg bg-[#ffffff0a] sm:!w-full w-96"
+      className="grid py-4 px-8 xs:px-3 rounded-lg bg-[#ffffff0a] sm:!w-full w-96"
       action=""
     >
       <p className="text-3xl text-center pt-2 mb-5">Get in touch</p>

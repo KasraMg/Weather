@@ -2,9 +2,10 @@ import Link from "next/link";
 import { FaLocationDot } from "react-icons/fa6";
 import { City } from "@/Types/city.types";
 import Image from "next/image";
+
 const Card = (props: City) => {
   const temp = String(((props.main.temp - 32) * 5) / 9).slice(0, 3);
-  console.log(props);
+
   return (
     <Link
       href={`/search/${props.name}`}
@@ -14,7 +15,7 @@ const Card = (props: City) => {
       <div>
         <div className="flex items-center gap-3 mb-3 mt-2">
           <FaLocationDot className="text-2xl text-[#0984e3]" />
-          <p className="text-2xl">
+          <p className="text-2xl xs:text-xl">
             {" "}
             {props.name}, {props.sys?.country}{" "}
           </p>

@@ -5,21 +5,19 @@
 @layer base {
   @font-face {
     font-family: Arturo;
-    src: url('/fonts/Arturo-Italic Trial.ttf')
+    src: url("/fonts/Arturo-Italic Trial.ttf");
   }
 
   @font-face {
     font-family: Fonarto;
-    src: url('/fonts/fonarto.regular.ttf')
+    src: url("/fonts/fonarto.regular.ttf");
   }
 
   @font-face {
     font-family: Quicksand;
-    src: url('/fonts/Quicksand-Medium.ttf')
+    src: url("/fonts/Quicksand-Medium.ttf");
   }
-
-
-} 
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -45,9 +43,12 @@ input[data-autocompleted] {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 .bg-overly {
@@ -56,11 +57,11 @@ body {
 
 .active {
   color: #0984e3 !important;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 .active::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 51.5%;
   transform: translatex(-222%);
@@ -70,7 +71,7 @@ body {
   background-color: #0984e3;
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .active::before {
     top: 65.5%;
   }
@@ -90,48 +91,62 @@ body {
 .city-card:hover .city-card-img {
   transform: translateY(-80px);
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   background-color: white !important;
 }
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   background: #0984e3 !important;
 }
 
 form input:focus,
-form textarea:focus{
+form textarea:focus {
   box-shadow: none !important;
   border-color: white !important;
 }
 
-.swal-footer{
+.swal-footer {
   text-align: center;
 }
- 
- 
-.loader::before , .loader::after {
+
+.loader::before,
+.loader::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
   inset: 0px;
   border-radius: 50%;
   border: 5px solid #0984e3;
-  animation: prixClipFix 2s linear infinite ;
+  animation: prixClipFix 2s linear infinite;
 }
-.loader::after{
+.loader::after {
   border-color: #eda216;
-  animation: prixClipFix 2s linear infinite , rotate 0.5s linear infinite reverse;
+  animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
   inset: 6px;
 }
 
 @keyframes rotate {
-  0%   {transform: rotate(0deg)}
-  100%   {transform: rotate(360deg)}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes prixClipFix {
-    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
-    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
-    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
-    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
-    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
 }
