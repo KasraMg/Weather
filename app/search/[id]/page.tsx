@@ -18,6 +18,7 @@ const Search = () => {
     () => cityWeeklyDatas(data.coord.lat, data.coord.lon)
   );
   document.title = params.id as string;
+console.log(data);
 
   return (
     <>

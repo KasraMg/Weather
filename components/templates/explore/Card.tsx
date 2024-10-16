@@ -26,7 +26,7 @@ const Card = (props: City) => {
             className="mx-auto w-16 h-16"
             width={1000}
             height={1000}
-            src={`/images/icons/${props.weather[0].main}.png`}
+            src={`/images/icons/${props.weather[0].main.toLocaleLowerCase()}.png`}
           />
 
           <p className="text-2xl">{props.weather[0].main}</p>

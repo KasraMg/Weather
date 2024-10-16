@@ -39,7 +39,7 @@ const Card = ({
           className="mx-auto w-16 h-16"
           width={1000}
           height={1000}
-          src={`/images/icons/${weatherData.weather[0].main}.png`}
+          src={`/images/icons/${weatherData.weather[0].main.toLocaleLowerCase()}.png`}
         />
       </div>
       <div

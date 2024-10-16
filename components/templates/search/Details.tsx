@@ -8,6 +8,7 @@ import { City } from "@/Types/city.types";
 import Image from "next/image";
 const Details = (props: City) => {
   const [tempType, setTempType] = useState("c");
+  console.log(props);
 
   const calculateHour = (hour: number) => {
     let sunrise = hour;
@@ -71,7 +72,7 @@ const Details = (props: City) => {
         </div>
         <div className="flex items-center gap-8 font-quicksand   xs:text-center">
           <Image
-            src={`/images/icons/${props.weather[0].main}.png`}
+            src={`/images/icons/${props.weather[0].main.toLocaleLowerCase()}.png`}
             alt="cloudy-night"
             className="w-[90px] h-[90px] mx-auto sm:w-[70px] xs:hidden"
             width={1000}
@@ -94,7 +95,7 @@ const Details = (props: City) => {
           </div>
           <div className="flex flex-col text-2xl w-[30px] xs:w-full sm:w-[70px] text-center">
             <Image
-              src={`/images/icons/${props.weather[0].main}.png`}
+              src={`/images/icons/${props.weather[0].main.toLocaleLowerCase()}.png`}
               alt="cloudy-night"
               className="w-[90px] h-[90px] mx-auto sm:w-[70px] hidden xs:block"
               width={1000}
