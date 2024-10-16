@@ -5,6 +5,7 @@ import { WiHumidity } from "react-icons/wi";
 import { useState } from "react";
 import { IoTodayOutline } from "react-icons/io5";
 import { City } from "@/Types/city.types";
+import Image from "next/image";
 const Details = (props: City) => {
   const [tempType, setTempType] = useState("c");
 
@@ -69,12 +70,12 @@ const Details = (props: City) => {
           </p>
         </div>
         <div className="flex items-center gap-8 font-quicksand   xs:text-center">
-          <img
-            className="mx-auto sm:w-[70px] xs:hidden"
-            width="90"
-            height="90"
+          <Image
             src={`/images/icons/${props.weather[0].main}.png`}
             alt="cloudy-night"
+            className="w-[90px] h-[90px] mx-auto sm:w-[70px] xs:hidden"
+            width={1000}
+            height={1000}
           />
           <div>
             <p
@@ -92,12 +93,12 @@ const Details = (props: City) => {
             </p>
           </div>
           <div className="flex flex-col text-2xl w-[30px] xs:w-full sm:w-[70px] text-center">
-            <img
-              className="mx-auto sm:w-[70px] hidden xs:block"
-              width="90"
-              height="90"
+            <Image
               src={`/images/icons/${props.weather[0].main}.png`}
               alt="cloudy-night"
+              className="w-[90px] h-[90px] mx-auto sm:w-[70px] hidden xs:block"
+              width={1000}
+              height={1000}
             />
             <span
               onClick={() => setTempType("c")}

@@ -5,7 +5,8 @@ import Head from "next/head";
 import useGetData from "@/hooks/useGetData";
 import { useParams } from "next/navigation";
 import { cityWeeklyDatas, fetchCity } from "@/utils/fetchs";
-import Loader from "@/components/modules/Loader/Loader"; 
+import Loader from "@/components/modules/Loader/Loader";
+import Image from "next/image";
 
 const Search = () => {
   const params = useParams();
@@ -29,11 +30,12 @@ const Search = () => {
         <div className="flex flex-col justify-center items-center h-[70vh] z-50 relative">
           {data?.cod == 404 && !isPending && (
             <>
-              <img
-                width="100"
-                height="100"
-                src="https://img.icons8.com/dotty/100/nothing-found.png"
+              <Image
+                src="/images/nothing-found.png"
+                width={1000}
+                height={1000}
                 alt="nothing-found"
+                className=" w-24 h-24"
               />
               <p>A city with this name was not found</p>
             </>
