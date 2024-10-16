@@ -10,7 +10,10 @@ const Cities = () => {
   const endIndex = 4 * page;
   const startIndex = endIndex - 4;
 
-  const { data,isPending } = useGetData<any>(["exploreCities"], fetchExplorCityData);
+  const { data, isPending } = useGetData<City[]>(
+    ["exploreCities"],
+    fetchExplorCityData
+  );
 
   return (
     <div>
@@ -21,21 +24,22 @@ const Cities = () => {
       </main>
 
       <ul className="flex justify-center relative z-30 mt-32 gap-4 md:pb-10 md:mt-24">
-        {Array.from({ length: Math.ceil(data?.length / 4) }).map(
-          (item, index) => (
-            <li
-              key={index + 1}
-              onClick={() => setPage(index + 1)}
-              className={`${
-                page == index + 1 && "!bg-[#0984e3] text-white"
-              } py-2 px-4 rounded-full bg-white text-black cursor-pointer`}
-            >
-              {index + 1}
-            </li>
-          )
-        )}
+        {data &&
+          Array.from({ length: Math.ceil(data?.length / 4) }).map(
+            (item, index) => (
+              <li
+                key={index + 1}
+                onClick={() => setPage(index + 1)}
+                className={`${
+                  page == index + 1 && "!bg-[#0984e3] text-white"
+                } py-2 px-4 rounded-full bg-white text-black cursor-pointer`}
+              >
+                {index + 1}
+              </li>
+            )
+          )}
       </ul>
-      {isPending && <Loader/>}
+      {isPending && <Loader />}
     </div>
   );
 };

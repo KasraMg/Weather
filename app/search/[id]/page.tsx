@@ -1,6 +1,6 @@
 "use client";
-import CurrenCityDatas from "@/components/templates/search/CurrenCityDatas";
-import WeaklyCityDatas from "@/components/templates/search/WeaklyCityDatas";
+import Details from "@/components/templates/search/Details";
+import Slider from "@/components/templates/search/Slider";
 import Head from "next/head";
 import useGetData from "@/hooks/useGetData";
 import { useParams } from "next/navigation";
@@ -24,7 +24,7 @@ const Search = () => {
         <title>Support</title>
       </Head>
       {data && data.name && weeklyData ? (
-        <CurrenCityDatas {...data} />
+        <Details {...data} />
       ) : (
         <div className="flex flex-col justify-center items-center h-[70vh] z-50 relative">
           {data?.cod == 404 && !isPending && (
@@ -40,7 +40,7 @@ const Search = () => {
           )}
         </div>
       )}
-      {weeklyData && <WeaklyCityDatas {...weeklyData} />}
+      {weeklyData && <Slider {...weeklyData} />}
       {isPending && <Loader />}
     </>
   );

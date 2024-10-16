@@ -1,5 +1,7 @@
 "use client";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 const Main = () => {
@@ -10,18 +12,20 @@ const Main = () => {
     if (event.keyCode == 13) {
       route.push(`/search/${searchInput}`);
     }
-  }; 
+  };
   const searchIconHandler = () => {
     route.push(`/search/${searchInput}`);
   };
   return (
     <div className="flex justify-center text-center relative z-30 flex-col pt-28">
-      <img
-        className="mx-auto  "
-        src="https://img.icons8.com/fluency/96/wind.png"
+      <Image
+        width={1000}
+        height={1000}
+        className="mx-auto w-24 mt-5"
+        src="/images/wind.png"
         alt="wind"
-      />
-
+        crossOrigin="anonymous"
+      /> 
       <span className="font-arturo text-[15px] my-2 text-gray-400">
         Wlc to Storm Seeker
       </span>
@@ -41,7 +45,7 @@ const Main = () => {
         />
       </section>
 
-      <p className="text-[14px] cursor-pointer sm-x2:mx-4 font-quicksand ">
+      <p className="text-[14px] cursor-pointer xs:mx-4 font-quicksand ">
         Get informed about the weather in all parts of the world
       </p>
     </div>

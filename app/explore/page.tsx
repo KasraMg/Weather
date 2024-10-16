@@ -1,6 +1,4 @@
-import Cities from "@/components/templates/explore/Cities";
-import Hydrated from "@/providers/Hydrated";
-import { fetchExplorCityData } from "@/utils/fetchs";  
+import Cities from "@/components/templates/explore/Cities"; 
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const Explore = () => {
-  return <Cities />  
+  return <Cities />;
 };
 
 export default Explore;
