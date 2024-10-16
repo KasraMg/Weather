@@ -4,7 +4,7 @@ import Card from "@/components/templates/explore/Card";
 import { useState } from "react";
 import useGetData from "@/hooks/useGetData";
 import { fetchExplorCityData } from "@/utils/fetchs";
-import Loader from "@/components/modules/loader/Loader";
+import Loader from "@/components/modules/Loader/Loader"; 
 const Cities = () => {
   const [page, setPage] = useState<number>(1);
   const endIndex = 4 * page;

@@ -1,7 +1,7 @@
 "use client";
 import { City } from "@/Types/city.types";
 import Card from "@/components/modules/card/Card";
-import Loader from "@/components/modules/loader/Loader";
+import Loader from "@/components/modules/Loader/Loader"; 
 import useGetData from "@/hooks/useGetData";
 import { fetchPopularCityData } from "@/utils/fetchs";
 const Cities = () => {

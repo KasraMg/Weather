@@ -5,7 +5,7 @@ import Head from "next/head";
 import useGetData from "@/hooks/useGetData";
 import { useParams } from "next/navigation";
 import { cityWeeklyDatas, fetchCity } from "@/utils/fetchs";
-import Loader from "@/components/modules/loader/Loader";
+import Loader from "@/components/modules/Loader/Loader"; 
 
 const Search = () => {
   const params = useParams();

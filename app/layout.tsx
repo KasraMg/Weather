@@ -1,4 +1,4 @@
-import ParticlesComponent from "@/components/modules/particles/Particles";
+import ParticlesComponent from "@/components/modules/Particles/Particles";
 import "./globals.css";
 import Navbar from "@/components/modules/navbar/Navbar";
 import QueryWrapper from "../providers/QueryWrapper";
